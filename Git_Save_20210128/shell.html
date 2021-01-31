@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button id = "mybtn"> openShell_ 网站</button>
+    <div id= 'mytxt'></div>
+  </div>
+  <script>
+    const{shell} = nodeRequire('electron')
+    const mybtn = document.getElementById('mybtn')
+    mybtn.onclick=()=>{
+      console.log('点我了');
+      shell.openExternal('https://github.com')
+    }
+    const fs = require('fs')
+    const root = fs.readdirSync('/')
+    const mytxt = document.getElementById('mytxt')
+    mytxt.innerHTML = root;
+  </script>
+</body>
+</html>
